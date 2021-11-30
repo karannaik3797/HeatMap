@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>CSE 578 / Fall 2021 / Homework #3</title>
+    <link rel='stylesheet' href='css/styles.css'>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src='scripts/homework3.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  </head>
+  <body style="background-color:white;">
+    <div class="contaier-fluid" style="text-align: center; margin: auto;">
+      <br>
+      <h3>
+        <strong>Visualization showing density of crowdsourced data throughout a particular day</strong>
+      </h3>
+            <div class="form-row" style="width: 850px; margin: auto;">            
+              <div class="form-group col-md-4">
+                  <label for="exampleFormControlSelect2" style="color: black;">Feature</label>
+                  <select class="form-control" id="feature" style="width: 250px; margin-left:1rem;" onclick="drawHeatMap()">
+                    <option value='sewer_and_water'>sewer_and_water</option>
+                    <option value='power'>power</option>
+                    <option value='roads_and_bridges'>roads_and_bridges</option>
+                    <option value='medical'>medical</option>
+                    <option value='buildings'>buildings</option>
+                    <option value='shake_intensity'>shake_intensity</option>                      
+                  </select>
+              </div>
+            
+              <div class="form-group col-md-4">
+                 <label for="exampleFormControlSelect2" style="color: black;">Day</label>
+                  <select class="form-control" id="day" style="width: 250px; margin-left:1rem;" onclick="drawHeatMap()">
+                    <option value='6'>6-4-2020</option>
+                    <option value='7'>7-4-2020</option>
+                    <option value='8'>8-4-2020</option>
+                    <option value='9'>9-4-2020</option>
+                    <option value='10'>10-4-2020</option>
+                    <option value='11'>11-4-2020</option>
+                  </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect2" style="color: black;">Range</label>
+                  <input class="form-control" style="width: 250px; margin-left:1rem;" type="range" name="cscale" id="cscale" min="25" max="900"  onchange="drawHeatMap()">
+             </div>
+            
+            </div>
+    
+            <div class="chart" style="margin: auto;">
+              <svg id="map" ></svg>
+            </div>       
+    </div>
+  </body>
+</html>
